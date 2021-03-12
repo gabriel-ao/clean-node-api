@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "@types/node": "^13.1.6",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "eslint": "^7.21.0",
@@ -20,7 +21,9 @@
     "eslint-plugin-standard": "4.2.1",
     "git-commit-msg-linter": "^2.3.11",
     "husky": "^4.0.6",
+    "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
+    "ts-jest": "^26.5.3",
     "typescript": "^3.7.4"
   },
   "dependencies": {

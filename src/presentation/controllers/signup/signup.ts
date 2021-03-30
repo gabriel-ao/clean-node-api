@@ -1,6 +1,6 @@
 import {
-  httpResponse,
-  httpRequest,
+  HttpResponse,
+  HttpRequest,
   Controller,
   EmailValidator,
   AddAccount,
@@ -17,7 +17,7 @@ export class SignUpController implements Controller {
     this.addAccount = addAccount;
   }
 
-  async handle(httpRequest: httpRequest): Promise<httpResponse> {
+  async handle(httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const requiredFilds = [
         'name',
@@ -52,7 +52,7 @@ export class SignUpController implements Controller {
       return ok(account);
     } catch (err) {
       // utilizado para ver os erros que passam
-      // console.error(err);
+      console.error(err);
       return serverError();
     }
   }

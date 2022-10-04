@@ -35,6 +35,7 @@ interface SutType {
   encrypterStub: Encrypter;
   addAccountRepositoryStub: AddAccountRepository;
 }
+
 const makeSut = (): any => {
   const encrypterStub = makeEncrypter();
   const addAccountRepositoryStub = makeAddAccountRepository();
@@ -56,7 +57,6 @@ describe('DbAddAccount Usecase', () => {
       password: 'valid_password',
     };
     await sut.add(accountData);
-
     expect(encryptSpy).toHaveBeenCalledWith('valid_password');
   });
 
@@ -85,7 +85,6 @@ describe('DbAddAccount Usecase', () => {
       password: 'valid_password',
     };
     await sut.add(accountData);
-
     expect(addSpy).toHaveBeenCalledWith({
       name: 'valid_name',
       email: 'valid_email',
@@ -117,7 +116,6 @@ describe('DbAddAccount Usecase', () => {
       password: 'valid_password',
     };
     const account = await sut.add(accountData);
-
     expect(account).toEqual({
       id: 'valid_id',
       name: 'valid_name',
